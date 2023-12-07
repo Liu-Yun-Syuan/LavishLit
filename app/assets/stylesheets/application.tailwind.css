@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  font-size: 16px;
+}
+
+.container {
+  font-size: 2rem;
+}
+
+.container p {
+  font-size: 0.6em;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
+.input-field {
+  @apply border-2 border-black;
+}

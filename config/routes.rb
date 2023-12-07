@@ -9,12 +9,13 @@ Rails.application.routes.draw do
   root "pages#index"
   get '/about', to: 'pages#about', as: :about
 
-  resources :users, expect: [:destroy] do
+  resources :users, expect: [:index, :destroy] do
+    resources :profiles, param: :username, only: [:show, :update, :destroy], path: '', as: :profile, shallow: true
+    resource :sessions, only: [:create, :destroy], path: ''
     collection do
       get :sign_in
     end
   end
-  resource :sessions, only: [:create, :destroy]
 
   resources :posts do
     resources :books, shallow: true, only: [:create, :destroy]

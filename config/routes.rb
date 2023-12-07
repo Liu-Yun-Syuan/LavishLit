@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  root "pages#index"
+  get '/about', to: 'pages#about', as: :about
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
+  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # get "up" => "rails/health#show", as: :rails_health_check
+
+  # Defines the root path route ("/")
+
   devise_for :users, path: '', controllers: {
     confirmations: 'users/confirmations',
     passwords: 'users/passwords',
@@ -14,30 +24,19 @@ Rails.application.routes.draw do
     # resources :profiles, param: :username, only: [:show, :update, :destroy], path: '', as: :profile, shallow: true
   end
 
-  root "pages#index"
-  get '/about', to: 'pages#about', as: :about
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources  :posts, :books, :films, :pictures do
+    resources :comments, shallow: true, only: [:create, :destroy]
+  end
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  # get "up" => "rails/health#show", as: :rails_health_check
-
-  # Defines the root path route ("/")
-
-  # resources :posts do
-  #   resources :books, shallow: true, only: [:create, :destroy]
-  #   resources :comments, shallow: true, only: [:create, :destroy]
-  # end
-
-  # namespace :api do
-  #   namespace :v1 do
-  #     resources :post, only: [] do
-  #       member do
-  #         patch :like
-  #         patch :store
-  #       end
-  #     end
-  #   end
-  # end
+  namespace :api do
+    namespace :v1 do
+      resources :posts, :books, :films, :pictures, only: [] do
+        member do
+          patch :like
+          patch :store
+        end
+      end
+    end
+  end
 
 end

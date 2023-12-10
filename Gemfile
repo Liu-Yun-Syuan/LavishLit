@@ -89,3 +89,6 @@ gem "braintree", "~> 4.16.0"
 
 # 運行 bin/dev
 gem "foreman", "~> 0.87.2"
+
+# 優化 URL
+gem "friendly_id", "~> 5.5"

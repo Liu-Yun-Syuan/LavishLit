@@ -12,20 +12,34 @@ def create_or_show_users(num_users)
     num_users.times do
         random_name = Faker::Name.name
         random_email = Faker::Internet.email(name: random_name)
+        nick_name = random_name.split(' ').first
+        unique_id = "#{nick_name}#{Faker::Number.decimal_part(digits: 4)}"
         existing_user = User.find_by(email: random_email)
-        if existing_user
-            puts "⛔ 信箱已註冊：#{existing_user.email}，用戶：#{existing_user.full_name}"
+        existing_unique_id = User.find_by(unique_id: unique_id)
+
+        if existing_user || existing_unique_id
+            if existing_user
+                puts "⛔ 信箱已註冊：#{existing_user.email}，UID：#{existing_user.unique_id}"
+            elsif existing_unique_id
+                puts "⛔ UID已存在：#{existing_unique_id.unique_id}，UID：#{existing_unique_id.unique_id}"
+            end
         else
-            new_user = User.create!(
+            begin
+                new_user = User.create!(
                 email: random_email,
                 password: '123456',
                 full_name: random_name,
-                nick_name: random_name.split(' ').first
-            )
-            puts "✅ 註冊新信箱：#{new_user.email}，用戶：#{new_user.full_name}"
+                nick_name: nick_name,
+                unique_id: unique_id
+                )
+                puts "✅ 註冊新信箱：#{new_user.email}，UID：#{new_user.unique_id}"
+            rescue ActiveRecord::RecordInvalid => e
+                puts "⚠️ 創建用戶時出現錯誤：#{e.message}"
+            end
         end
     end
 end
+
 
 puts "建立資料中..."
 

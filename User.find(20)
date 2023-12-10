@@ -1,0 +1,12 @@
+ => 
+[[32m#<User id: 1, email: "aaa@aaa.aaa", created_at: "2023-12-09 00:10:21.716051000 +0000", updated_at: "2023-12-10 12:08:51.728933000 +0000", full_name: "aaa", nick_name: "bbb", slug: nil, unique_id: "ccc">[0m,
+ [32m#<User id: 2, email: "alva.fahey@sanford.example", created_at: "2023-12-09 22:27:34.182820000 +0000", updated_at: "2023-12-09 22:27:34.182820000 +0000", full_name: "Alva Fahey", nick_name: "Alva", slug: nil, unique_id: nil>[0m,
+ [32m#<User id: 3, email: "greg_mann@klein.test", created_at: "2023-12-09 22:29:07.708935000 +0000", updated_at: "2023-12-09 22:29:07.708935000 +0000", full_name: "Greg Mann", nick_name: "Greg", slug: nil, unique_id: nil>[0m,
+ [32m#<User id: 4, email: "rosalia.sanford.ii@osinski-jacobi.test", created_at: "2023-12-09 22:29:08.055410000 +0000", updated_at: "2023-12-09 22:29:08.055410000 +0000", full_name: "Rosalia Sanford II", nick_name: "Rosalia", slug: nil, unique_id: nil>[0m,
+ [32m#<User id: 5, email: "i.dorethea.marquardt@kshlerin.test", created_at: "2023-12-09 22:29:08.375110000 +0000", updated_at: "2023-12-09 22:29:08.375110000 +0000", full_name: "Dorethea Marquardt I", nick_name: "Dorethea", slug: nil, unique_id: nil>[0m,
+ [32m#<User id: 6, email: "pres_kate_sauer@morar.test", created_at: "2023-12-09 22:29:08.671034000 +0000", updated_at: "2023-12-09 22:29:08.671034000 +0000", full_name: "Pres. Kate Sauer", nick_name: "Pres.", slug: nil, unique_id: nil>[0m,
+ [32m#<User id: 7, email: "little_douglass@schneider.test", created_at: "2023-12-09 22:29:08.954248000 +0000", updated_at: "2023-12-09 22:29:08.954248000 +0000", full_name: "Douglass Little", nick_name: "Douglass", slug: nil, unique_id: nil>[0m,
+ [32m#<User id: 8, email: "reuben_vm_koelpin@erdman-hauck.example", created_at: "2023-12-10 08:06:40.301730000 +0000", updated_at: "2023-12-10 08:06:40.301730000 +0000", full_name: "Reuben Koelpin VM", nick_name: "Reuben", slug: nil, unique_id: nil>[0m,
+ [32m#<User id: 9, email: "markita.dc.walsh@brekke.test", created_at: "2023-12-10 08:06:40.517950000 +0000", updated_at: "2023-12-10 08:06:40.517950000 +0000", full_name: "Markita Walsh DC", nick_name: "Markita", slug: nil, unique_id: nil>[0m,
+ [32m#<User id: 10, email: "thiel.nida.i@ortiz.example", created_at: "2023-12-10 08:06:40.719737000 +0000", updated_at: "2023-12-10 08:06:40.719737000 +0000", full_name: "Nida Thiel I", nick_name: "Nida", slug: nil, unique_id: nil>[0m,
+ [31m[1m"[0m[31m...[0m[31m[1m"[0m] 

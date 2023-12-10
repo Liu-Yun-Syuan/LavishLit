@@ -69,4 +69,23 @@ group :test do
   gem "selenium-webdriver"
 end
 
+# CSS
+gem "tailwindcss-rails", "~> 2.0"
+
+# 會員系統
 gem "devise", "~> 4.9"
+
+# 假資料
+gem "faker", "~> 3.2"
+
+# 縮圖
+gem "image_processing", "~> 1.12"
+
+# 軟刪除
+gem "paranoia", "~> 2.6"
+
+# Paypal
+gem "braintree", "~> 4.16.0"
+
+# 運行 bin/dev
+gem "foreman", "~> 0.87.2"

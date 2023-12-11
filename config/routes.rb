@@ -18,14 +18,16 @@ Rails.application.routes.draw do
     sign_in: 'log_in',
     edit: 'edit/profile'
   }, singular: :user
-  get '(/:unique_id)', to: 'users#show', as: :user, via: :get
   # singular: set up the singular name for the given resource. This is used as the helper methods names in controller ("authenticate_#{singular}!", "#{singular}_signed_in?", "current_#{singular}" and "#{singular}_session"), as the scope name in routes and as the scope given to warden.
 
   devise_scope :user do
-    # resources :profiles, param: :username, only: [:show, :update, :destroy], path: '', as: :profile, shallow: true
+    resources :profiles, param: :unique_id, only: [:show, :update, :destroy], path: '', as: :profile, shallow: true
+    resources  :posts, :books, :films, :pictures, param: :slug do
+      resources :comments, shallow: true, only: [:create, :destroy]
+    end
   end
 
-  resources  :posts, :books, :films, :pictures do
+  resources  :posts, :books, :films, :pictures, param: :slug do
     resources :comments, shallow: true, only: [:create, :destroy]
   end
 
